@@ -7,7 +7,7 @@ test("textarea content", function() {
   var textarea = document.createElement('textarea');
   var text     = document.createTextNode('text-area-content');
   textarea.appendChild(text);
-alert(textarea.value);
+
   try { ok(textarea.value == 'text-area-content',
         "textarea.value returns the correct content, as per http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-24874179");
   }catch(e){print(e);}
