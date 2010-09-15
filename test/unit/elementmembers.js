@@ -3,6 +3,20 @@ module("elementmembers");
 // We ought to have test coverage for all members of all DOM objects, but
 // until then, add test cases here for members as they are created
 
+test("textarea content", function() {
+  var textarea = document.createElement('textarea');
+  var text     = document.createTextNode('text-area-content');
+  textarea.appendChild(text);
+alert(textarea.value);
+  try { ok(textarea.value == 'text-area-content',
+        "textarea.value returns the correct content, as per http://www.w3.org/TR/DOM-Level-2-HTML/html.html#ID-24874179");
+  }catch(e){print(e);}
+  
+  try { ok(textarea.innerText == 'text-area-content',
+        "textarea.innerText returns the correct content");
+  }catch(e){print(e);}
+});
+
 test("attributes common to all HTML elements", function() {
     expect(4);
 
