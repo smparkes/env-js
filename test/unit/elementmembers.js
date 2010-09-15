@@ -4,6 +4,8 @@ module("elementmembers");
 // until then, add test cases here for members as they are created
 
 test("textarea content", function() {
+  expect(2);
+  
   var textarea = document.createElement('textarea');
   var text     = document.createTextNode('text-area-content');
   textarea.appendChild(text);
