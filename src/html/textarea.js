@@ -20,6 +20,9 @@ __extend__(HTMLTextAreaElement.prototype, {
     get value(){
         return this.innerText;
     },
+    set value(value){
+        this.innerText=value;
+    },
     set rows(value){
         this.setAttribute('rows', value);
     }

@@ -3,7 +3,23 @@ module("elementmembers");
 // We ought to have test coverage for all members of all DOM objects, but
 // until then, add test cases here for members as they are created
 
-test("textarea content", function() {
+test("setting textarea content", function() {
+  expect(2);
+  
+  var textarea = document.createElement('textarea');
+
+  try { textarea.value = 'textarea-value';
+        ok(textarea.value == 'textarea-value',
+        "textarea.value= sets the value correctly");
+  }catch(e){print(e);}
+  
+  try { textarea.innerText = 'textarea-innerText';
+        ok(textarea.innerText == 'textarea-innerText',
+        "textarea.innerText= sets the value correctly");
+  }catch(e){print(e);}
+});
+
+test("getting textarea content", function() {
   expect(2);
   
   var textarea = document.createElement('textarea');
